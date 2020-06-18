@@ -1,15 +1,35 @@
 const dotenv = require('dotenv');
 dotenv.config();
-var path = require('path')
+var path = require('path');
 var aylien = require("aylien_textapi");
-const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+const cors = require("cors");
+const express = require('express');
+const bodyParser = require("body-parser");
+const mockAPIResponse = require('./mockAPI.js');
+var textapi = new aylien({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+});
 
 const app = express()
 
-console.log(`Your API key is ${process.env.API_KEY}`);
+app.use(cors());
 
 app.use(express.static('dist'))
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+textapi.sentiment({
+    text: 'John is a very good football player',
+    mode: 'tweet'
+  }, function(error, response) {
+    if (error === null) {
+        console.log(response);
+    } else {
+        console.log(response);
+    }
+});
 
 console.log(__dirname)
 
