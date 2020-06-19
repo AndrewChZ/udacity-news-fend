@@ -20,25 +20,6 @@ app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-textapi.sentiment({
-    text: 'John is a very good football player',
-    mode: 'tweet'
-  }, function(error, response) {
-    if (error === null) {
-        console.log(`
-                    ----------------------------------            
-                    API Call is successful!
-                    ----------------------------------
-                    Your content was: 
-                    The polarity is: ${response.polarity} (${(response.polarity_confidence*100).toFixed(2)}% confidence)
-                    The subjectivity is: ${response.subjectivity} (${(response.subjectivity_confidence*100).toFixed(2)}% confidence)
-                    ----------------------------------
-                    `);
-    } else {
-        console.log(`Oh no something went wrong and the error is: ${response}`);
-    }
-});
-
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
