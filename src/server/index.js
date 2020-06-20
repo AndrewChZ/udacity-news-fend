@@ -20,19 +20,6 @@ app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-textapi.sentiment({
-    text: 'John is a very good football player',
-    mode: 'tweet'
-  }, function(error, response) {
-    if (error === null) {
-        console.log(response);
-    } else {
-        console.log(response);
-    }
-});
-
-console.log(__dirname)
-
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
@@ -45,3 +32,35 @@ app.listen(8080, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+
+// app.get('/api', function (req, res) {
+//     res.send(mockAPIResponse)
+// })
+
+app.post("/api/", function (req, res) {
+    console.log("API called");
+  
+    //Grab request text
+    const userText = req.body.text;
+  
+    //Call Aylien API
+    async function myFetch(a) {
+      await textapi.sentiment(
+        {
+          text: a,
+        },
+        function (error, response) {
+          if (error === null) {
+            res.json(response);
+            console.log(response);
+          } else {
+            console.log(error, "An error has occured");
+            res.status(500).send({ error: "something blew up" });
+          }
+        }
+      );
+    }
+  
+    myFetch(userText);
+  });
+  
