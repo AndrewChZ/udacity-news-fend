@@ -1,17 +1,38 @@
+// 2nd handleSubmit function
+
 function handleSubmit(event) {
-    console.log("Running handleSubmit function")
     event.preventDefault()
 
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+    let content = document.getElementById("name").value;
+    console.log(`------------------------------------------------------------`)
+    console.log(`The string that we are going to be checking is: ${content}`);
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+    async function getResults(content) {
+        try {
+            const settings = {
+                method: 'POST', 
+                credentials: 'same-origin',
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },    
+            body: JSON.stringify({ text: content }), 
+            }; 
+        const res = await fetch("http://localhost:8080/api/", settings);
+        return res;
+        } catch (error) {
+            console.log("An error has occured", error);
+        }
+    }
+    getResults(content)
+        .then((res) => res.json())
+        .then((data) => {
+        //Grab HTML Elements to be updated
+        console.log(data);
+        console.log(`Polarity: ${data.polarity} (${data.polarity_confidence.toFixed(2)}% confident)`);
+        console.log(`Subjectivity: ${data.subjectivity} (${data.subjectivity_confidence.toFixed(2)}% confidence)`);
+        console.log(`------------------------------------------------------------`)
+    });
+    
 }
 
 export { handleSubmit }
