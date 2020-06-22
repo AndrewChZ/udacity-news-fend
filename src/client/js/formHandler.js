@@ -26,7 +26,23 @@ function handleSubmit(event) {
     getResults(content)
         .then((res) => res.json())
         .then((data) => {
-        //Grab HTML Elements to be updated
+
+        // Updated HTML fragment with results
+        let fragment = document.createDocumentFragment();
+        fragment = `<strong>Form Results:</strong>
+                    <div id="results">
+                        <p><b>Text tested: ${content}</b></p><br>
+                    
+                        <p>Polarity: ${data.polarity}<br>
+                        (${data.polarity_confidence.toFixed(2)}% confidence)</p>
+                        <br>
+                        <p>Subjectivity: ${data.subjectivity}<br>
+                        (${data.subjectivity_confidence.toFixed(2)}% confidence)</p>
+                    </div>
+                    `
+        document.getElementById('results_insert').innerHTML = fragment;
+
+        // Logging results to console
         console.log(data);
         console.log(`Polarity: ${data.polarity} (${data.polarity_confidence.toFixed(2)}% confident)`);
         console.log(`Subjectivity: ${data.subjectivity} (${data.subjectivity_confidence.toFixed(2)}% confidence)`);
