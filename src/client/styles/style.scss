@@ -2,6 +2,7 @@ $purple-header: #6236FF;
 $grey-dark: #6E727D;
 $blue-link: #5785E8;
 $grey-light: #BFC4D1;
+$white: #FFFFFF;
 $font-primary: 'Roboto Slab', serif;
 $font-secondary: 'Open Sans', sans-serif;
 
@@ -12,7 +13,6 @@ html {
 
 h1 {
     font-family: $font-primary;
-    color: $purple-header;
 }
 
 h3 {
@@ -27,7 +27,6 @@ a {
 body {
     display: flex;
     font-family: $font-secondary;
-    font-size: 100%;
     width: 80%;
     height: 100%;
     margin: 0 auto;
@@ -52,11 +51,43 @@ body {
         flex-direction: column;
         justify-content: center;
         padding: 0 0 0 1rem;
+
+        form {
+            width: 100%;
+        }
+
+        #results {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-areas: 
+                "your-text your-text"
+                "polarity subjectivity";
+            
+                p {
+                    margin-bottom: 0;
+                }
+
+                #your-text {
+                    grid-area: your-text;
+                    margin-bottom: 1.25rem;
+                }
+
+                #polarity {
+                    grid-area: polarity;
+                }
+
+                #subjectivity {
+                    grid-area: subjectivity;
+                }
+        }
+
     }
 }
 
 p {
     margin: 0 0 1rem 0;
+    font-size: 0.875rem;
+    color: $grey-dark;
 }
 
 #name {
@@ -66,7 +97,9 @@ p {
     border: 1px solid $grey-light;
     color: $grey-dark;
     font-size: 0.9rem;
-    padding-left: 1rem;
+    padding: 0 0.6rem 0 0.6rem;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 #name::placeholder {
@@ -75,4 +108,32 @@ p {
 
 #name:focus {
     outline: none;
+}
+
+#submit-button {
+    background-color: $purple-header;
+    padding: 0.68rem 3rem;
+    color: $white;
+    font-family: $font-primary;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    display: block;
+}
+
+#divider {
+    border-bottom: 1px solid $grey-light;
+    margin: 1.25rem 0 0 0;
+    display: block;
+}
+
+.subtitle {
+    color: $grey-light;
+}
+
+#logo {
+    color: $purple-header;
 }
