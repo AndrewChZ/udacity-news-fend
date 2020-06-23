@@ -2,36 +2,52 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>Textlidate</title>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
         <script type="text/javascript" src="../../../dist/main.js"></script>
     </head>
 
     <body>
+        <div id="intro-content"> 
+            <h1>Textlidate</h1>
+            <p>Test the polarity and subjectivity of any content</p>
+            <img src="/src/client/img/illustration.svg" id="illustration-1">
+        </div> 
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
-
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="W.H.O. Warns of ‘Dangerous Phase’ of Pandemic as Outbreaks Widen." placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
-
-            <section id="results_insert">
-            </section>
-        </main>
-
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
+        <div id="secondary-content">
+            <h3>What shall we test?</h3>
+            <p>Type in your content or or <a href="">randomize it</a></p>
+            <form>
+                <input id="name" type="text" name="input" placeholder="Input any news headline here">
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+            </form>
+        </div>
+        <!-- old codes -->
+        <!-- <div>
+            <header>
+                <div class="">
+                    Logo
+                </div>
+                <div class="">
+                    navigation
+                </div>
+            </header>
+    
+            <main>
+                <section>
+                    <form class="" onsubmit="return Client.handleSubmit(event)">
+                        <input id="name" type="text" name="input" value="W.H.O. Warns of ‘Dangerous Phase’ of Pandemic as Outbreaks Widen." placeholder="Name">
+                        <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    </form>
+                <section>
+    
+                <section id="results_insert">
+                </section>
+            </main>
+    
+            <footer>
+                <p>This is a footer</p>
+            </footer>
+        </div> -->
     </body>
 </html>

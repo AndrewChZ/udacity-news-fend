@@ -1,0 +1,78 @@
+$purple-header: #6236FF;
+$grey-dark: #6E727D;
+$blue-link: #5785E8;
+$grey-light: #BFC4D1;
+$font-primary: 'Roboto Slab', serif;
+$font-secondary: 'Open Sans', sans-serif;
+
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+h1 {
+    font-family: $font-primary;
+    color: $purple-header;
+}
+
+h3 {
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+a {
+    color: $blue-link;
+}
+
+body {
+    display: flex;
+    font-family: $font-secondary;
+    font-size: 100%;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    
+    #intro-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem 0 0;
+        width: 50%;
+        height: 100%;
+        background: radial-gradient(ellipse farthest-corner at 100% 50%, rgba(236,241,246,1) 0%, rgba(236,241,246,0) 70%);
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    #secondary-content{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 0 0 1rem;
+    }
+}
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+#name {
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid $grey-light;
+    color: $grey-dark;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+}
+
+#name::placeholder {
+    color: $grey-light
+}
+
+#name:focus {
+    outline: none;
+}
