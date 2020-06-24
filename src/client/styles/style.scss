@@ -124,6 +124,10 @@ p {
     display: block;
 }
 
+#submit-button:focus {
+    outline: none;
+}
+
 #divider {
     border-bottom: 1px solid $grey-light;
     margin: 1.25rem 0 0 0;
