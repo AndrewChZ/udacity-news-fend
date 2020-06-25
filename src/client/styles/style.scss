@@ -1,4 +1,5 @@
 $purple-header: #6236FF;
+$purple-dark: #380EB0;
 $grey-dark: #6E727D;
 $blue-link: #5785E8;
 $grey-light: #BFC4D1;
@@ -126,6 +127,10 @@ p {
 
 #submit-button:focus {
     outline: none;
+}
+
+#submit-button:active {
+    background-color: $purple-dark;
 }
 
 #divider {
