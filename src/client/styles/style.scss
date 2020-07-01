@@ -3,6 +3,7 @@ $purple-dark: #380EB0;
 $grey-dark: #6E727D;
 $blue-link: #5785E8;
 $grey-light: #BFC4D1;
+$red: #D01212;
 $white: #FFFFFF;
 $font-primary: 'Roboto Slab', serif;
 $font-secondary: 'Open Sans', sans-serif;
@@ -10,7 +11,7 @@ $font-secondary: 'Open Sans', sans-serif;
 html {
     height: 100%;
     font-size: 100%;
-} 
+} w
 
 h1 {
     font-family: $font-primary;
@@ -145,4 +146,10 @@ p {
 
 #logo {
     color: $purple-header;
+}
+
+#validation-message {
+    color: $red;
+    font-size: 0.9rem;
+    margin: 0.75rem 0 0 0.6rem;
 }

@@ -18,7 +18,8 @@
             <h3>What shall we test?</h3>
             <p>Type in your content or or <a href="" onclick="return Client.generateHeadline()">test a random piece</a></p>
             <form>
-                <input id="name" type="text" name="input" placeholder="Input any news headline here" value="Coronavirus cases surge worldwide as people let their guard down">
+                <input id="name" type="text" name="input" onkeypress="return Client.inputValidate(event)" placeholder="Input any content here">
+                <div id="validation-message"></div>
                 <input type="submit" id="submit-button" name="" value="Submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
             </form>
             <div id="results-group">
