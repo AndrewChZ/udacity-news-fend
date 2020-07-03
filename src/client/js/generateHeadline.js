@@ -1,6 +1,8 @@
 export { generateHeadline }
 module.exports = generateHeadline
 
+// const generateHeadline = require('./generateHeadline')
+
 
 function generateHeadline() {
     event.preventDefault()
