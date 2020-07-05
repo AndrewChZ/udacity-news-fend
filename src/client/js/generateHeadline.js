@@ -1,3 +1,6 @@
+export { generateHeadline }
+module.exports = generateHeadline
+
 function generateHeadline() {
     event.preventDefault()
     console.log("::: generating headlines :::");
@@ -34,5 +37,3 @@ function generateHeadline() {
     console.log("::: Replacing value :::");
     document.getElementById("name").value = headlines[Math.floor(Math.random() * headlines.length)];
 }
-
-export { generateHeadline }
