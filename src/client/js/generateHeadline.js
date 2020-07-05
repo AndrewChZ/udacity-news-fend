@@ -1,7 +1,4 @@
-export { generateHeadline }
-module.exports = generateHeadline
 
-// const generateHeadline = require('./generateHeadline')
 
 
 function generateHeadline() {
@@ -44,3 +41,6 @@ function generateHeadline() {
 }
 
 
+
+export { generateHeadline }
+// module.exports = generateHeadline

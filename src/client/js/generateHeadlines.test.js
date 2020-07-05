@@ -1,10 +1,14 @@
 // const generateHeadline = require('./generateHeadline')
 
+import { generateHeadline } from './generateHeadline';
+
 jest.mock('./generateHeadline');
 
 test ('Provides us with a list of headlines that we can randomly pick from', () => {
 
-    const generateHeadline = require('./generateHeadline')
+
+    // const generateHeadline = require('./generateHeadline')
+
 
     // Set up our document body
     document.body.innerHTML =
