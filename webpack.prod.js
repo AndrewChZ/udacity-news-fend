@@ -37,6 +37,9 @@ module.exports = {
               },
         ]
     },
+    externals: {
+          fsevents: "require('fsevents')"
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
