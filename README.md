@@ -1,4 +1,4 @@
-# Travel Journal
+# Objectivity & Polarity Detector
 A web app that allows you to determine what is the polarity and subjectivity for a inputted piece of string
 
 ### Features

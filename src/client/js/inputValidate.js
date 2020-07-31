@@ -8,6 +8,7 @@ function inputValidate() {
         validationText.innerHTML = "";
         inputField.style.border = "1px solid #BFC4D1";
         inputField.classList.remove('invalidInput')
+        return true;
     }
 }
 
