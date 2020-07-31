@@ -20,7 +20,7 @@ function handleSubmit(event) {
                     },    
                 body: JSON.stringify({ text: content }), 
                 }; 
-            const res = await fetch("http://localhost:8000/api/", settings);
+            const res = await fetch("http://localhost:8080/api/", settings);
             return res;
             } catch (error) {
                 console.log("An error has occured", error);
